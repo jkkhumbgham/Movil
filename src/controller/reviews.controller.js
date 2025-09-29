@@ -60,7 +60,7 @@ export const updateReview = async (req, res) => {
         const id = req.params.id;
         const review = await Review.findByPk(id);
         if (!review) {
-            return res.status(404);
+            return res.sendStatus(404);
         }
         await review.update(req.body);
         return res.json(review);
