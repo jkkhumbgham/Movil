@@ -5,7 +5,7 @@ import { ObrasIniciales } from "./database/initObras.js";
 import "./models/Artista.js";
 import { ArtistasIniciales } from "./database/initArtistas.js";
 import { relaciones } from "./models/relaciones.js";
-import "./models/comentario.js";
+import "./models/Comentario.js";
 import "./models/review.js";
 import "./models/Tags.js";
 import { TagsIniciales } from "./database/initTags.js";

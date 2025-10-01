@@ -1,13 +1,19 @@
 import { Obra } from "../models/Obra.js";
 import { Artista } from "../models/Artista.js";
+import { Tag } from "../models/Tags.js";
 export const getObras = async(req, res) => {
     try {
         const obras = await Obra.findAll(
-            { include: {
+            { include:[ {
                 model: Artista,
                 as: 'artista',
                 attributes: ['nombre', 'fotousuario']
-            } }
+            },
+        {
+            model: Tag,
+            as: 'tags',
+            attributes: ['tag']
+        }] }
         );
         return res.json(obras);
     } catch (error) {
@@ -19,11 +25,16 @@ export const getObras = async(req, res) => {
 export const getObra = async(req, res) => {
     try{
         const obra = await Obra.findByPk(req.params.id,
-            { include: {
+            { include:[ {
                 model: Artista,
                 as: 'artista',
                 attributes: ['nombre', 'fotousuario']
-            } });
+            },
+        {
+            model: Tag,
+            as: 'tags',
+            attributes: ['tag']
+        }] });
         if(!obra){
             return res.sendStatus(404);
         }

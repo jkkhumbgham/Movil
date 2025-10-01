@@ -25,10 +25,6 @@ export const Obra = sequelize.define(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        hora: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         obraIMG: {
             type: DataTypes.STRING,
             allowNull: false,

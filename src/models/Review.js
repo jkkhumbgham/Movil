@@ -9,14 +9,7 @@ export const Review = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        artistaId: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: "artistas",
-                key: "id",
-            }
-        },obraId: {
+        obraId: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
@@ -24,12 +17,32 @@ export const Review = sequelize.define(
                 key: "id",
             }
         },
-        calificacion: {
+        artistaId: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            references: {
+                model: "artistas",
+                key: "id",
+            }
+        },
+        parentComentarioId: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: "comentarios",
+                key: "id",
+            }    
         },
         comentario: {
             type: DataTypes.STRING,
+            allowNull: false,
+        },
+        likes: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        calificacion: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
     },

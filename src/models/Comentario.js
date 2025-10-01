@@ -45,5 +45,6 @@ export const Comentario = sequelize.define(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        
     },
 );    
