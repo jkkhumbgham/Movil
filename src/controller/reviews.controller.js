@@ -1,6 +1,6 @@
 import { Artista } from "../models/Artista.js";
 import { Obra } from "../models/Obra.js";
-import { Review } from "../models/review.js";
+import { Review } from "../models/Review.js";
 
 export const getReviews = async (req, res) => {
     try {

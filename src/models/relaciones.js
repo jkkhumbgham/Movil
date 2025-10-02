@@ -1,7 +1,7 @@
 import{Artista} from './Artista.js'
 import{Obra} from './Obra.js'
 import{Comentario} from './comentario.js'
-import{Review} from './review.js'
+import{Review} from './Review.js'
 import{Tag} from './Tags.js'
 import{Follower} from './Follower.js'
 import{Interes} from './Intereses.js'

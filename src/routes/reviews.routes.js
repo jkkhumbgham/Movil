@@ -7,9 +7,9 @@ router.get("/reviews", getReviews)
 
 router.get("/reviews/:id", getReview )
 
-router.get("/reviews/artista/:artistaId", getReviewsByArtistaId )
+router.get("/artista/:artistaId/reviews", getReviewsByArtistaId )
 
-router.get("/reviews/obra/:obraId", getReviewsByObraId )
+router.get("/obra/:obraId/reviews", getReviewsByObraId )
 
 router.post("/reviews", createReview)
 
