@@ -37,13 +37,21 @@ export const Comentario = sequelize.define(
             type: DataTypes.STRING,
             allowNull: false,
         },
+
+        calificacion: { 
+            type: DataTypes.INTEGER,
+            allowNull: false, 
+            defaultValue: 0,   
+        },
+
         hora: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         likes: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            defaultValue: 0,
         },
         
     },
