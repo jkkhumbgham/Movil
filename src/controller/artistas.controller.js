@@ -1,4 +1,6 @@
+import { Interes } from "../models/Intereses.js";
 import{ Artista } from "../models/Artista.js";
+import { Obra } from "../models/Obra.js";
 
 export const getUsers = async(req, res) => {
     try {
@@ -22,13 +24,21 @@ export const createUser = async(req, res) => {
 
 export const getUser = async(req, res) => {
     try {
-        const user = await Artista.findByPk(req.params.id);
+        const user = await Artista.findByPk(req.params.id,{ include:[ {
+                        model: Obra,
+                        as: 'obras',
+                        attributes: ['id','titulo', 'descripcion', 'obraIMG', 'numComentarios', 'likes', 'compartidos', 'vistas','createdAt']
+                    },
+                {
+                    model: Interes,
+                    as: 'intereses',
+                    attributes: ['interes']
+                }] });
         if(!user){
             return res.sendStatus(404);
-        } 
-        return res.json(user);
+        } else return res.json(user);
     } catch (error) {
-        return res.sendStatus(500).json({ message: error.message });
+        return res.status(500).json({ message: error.message });
     }
 };
 

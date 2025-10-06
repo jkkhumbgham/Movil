@@ -77,7 +77,7 @@ export const deleteReview = async (req, res) => {
             return res.sendStatus(404);
         }
         await review.destroy();
-        return res.sendStatus(204);
+        return res.status(204).json({});
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }

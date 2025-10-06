@@ -40,9 +40,10 @@ export const Review = sequelize.define(
         likes: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            defaultValue: 0
         },
         calificacion: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DOUBLE,
             allowNull: false,
         },
     },
